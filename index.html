@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ModalCSS Cloudinary Example</title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+	<!-- Modal CSS3 Styles -->
+	<link href="css/modal.css" rel="stylesheet">
+	
+	<!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+	<script type="text/javascript">
+		const cloudName = 'yourCloudName';
+		const unsignedUploadPreset = 'theUnsignedPreset';
+	</script>
+</head>
+<body>
+
+	<h1>ModalCSS Cloudinary upload</h1>
+	<p class="lead">
+		A javascript functionality which helps you to accelerate the integration of <a href="https://cloudinary.com/solutions/image_management" target="_blank">Cloudinary</a> in any new <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">Vanilla JS</a> project.<br>
+		This sample works upon the <a href="https://github.com/cameronbaney/CSS3-Modal" target="_blank">CSS3 modal</a> and <a href="https://purecss.io/" target="_blank">Pure CSS</a>.
+	</p>
+	<button type="button" class="btn btn-md btn-primary" onclick='cloudinaryModal("Image upload", "Cancel", "Upload multiple files using the select button or by doing drag and drop within the dashed area.", "Select");'>
+		Cloudinary images upload
+	</button>
+	<p class="lead">
+		The uploaded file url will be "saved" to the "cloudinaryLoadedImg" hidden input. Based on the "pure JS Cloudinary sample" at <a href="https://codepen.io/team/Cloudinary/pen/QgpyOK" target="_blank">codepen</a>
+	</p>
+
+	<button class="pure-button pure-button-active"><a id="" class="" href="#modalCloudinary" target="_top">Agregar</a></button>
+	<input type="hidden" id="cloudinaryLoadedImg">
+
+	<div id="modalCloudinary" class="">
+		<div class="modal-content">
+			<div class="header" style="letter-spacing:normal; !important">
+				<h2>Cloudinary upload</h2>
+			</div>
+			<div class="copy" style="letter-spacing:normal; !important">
+				<div id="dropboxFileUpload" ondragenter="event.stopPropagation(); event.preventDefault();" ondragover="event.stopPropagation(); event.preventDefault();" ondrop="event.stopPropagation(); event.preventDefault(); doDrop(event);" class="">
+					<form class="my-form">
+						<div class="form_line">
+							<h4>Upload multiple files using the select button or by doing drag and drop within the dashed area.</h4>
+							<div class="form_controls">
+								<div class="upload_button_holder">
+									<div style="display: block; width: 100px; height: 20px; overflow: hidden;">
+										<button style="width: 110px; height: 30px; position: relative; top: -5px; left: -5px; cursor: pointer;"><a href="javascript: void(0)">Select</a></button>
+										<input type="file" value="hola" multiple accept="image/*" id="" name="" onchange="handleFiles(this.files)" style="font-size: 50px; width: 120px; opacity: 0; filter:alpha(opacity=0); position: relative; top: -40px;; left: -20px" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="progress-bar" id="progress-bar">
+						<div class="progress" id="progress"></div>
+					</div>
+					<div id="galleryFileUpload" ></div>
+				</div>
+					
+			</div>
+			<div class="cf footer">
+				<a href="#" onclick=""><button class="pure-button pure-button-primary " style="letter-spacing:normal; !important">Close</button></a>
+			</div>
+		</div>
+		<div class="overlay"></div>
+	</div>
+	
+	<script src="js/modal-cloudinary.js"></script>
+</body>
+</html>
